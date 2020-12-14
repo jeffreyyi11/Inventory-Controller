@@ -10,4 +10,9 @@ public class MainController {
 	public String index() {
 		return "Register_login.jsp";	
 	}
+	
+	@GetMapping("/addproducts")
+	public String addProduct() {
+		return "AddProduct.jsp";
+	}
 }

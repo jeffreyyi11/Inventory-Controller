@@ -10,14 +10,21 @@
 </head>
 <body>
 	<h1>Add Category</h1>
-	<form:form action="/addcategory" method="Post" modelAttribute="category">
+	<form:form action="/addcategory" method="post" modelAttribute="category">
 		<p>
-			<label for="name">Name:</label>
-			<input type="text" name="name" />
+			<form:label path="name">Name: </form:label>
+			<form:errors path="name" />
+			<form:input path="name" />
 		</p>
 		<p>
-			<label for="description">Description:</label>
-			<input type="text" name="description" />
+			<form:label path="description">Description: </form:label>
+			<form:errors path="description" />
+			<form:textarea path="description" />
+		</p>
+		<p>
+			<form:label path="categoryId">Sku: </form:label>
+			<form:errors path="categoryId" />
+			<form:input path="categoryId" />
 		</p>
 		<input type="submit" value="Submit" />
 	</form:form>

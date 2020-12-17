@@ -20,10 +20,12 @@ public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Size(min = 5, max = 100)
+	@Size(min = 2, max = 100)
     private String name;
 	@Size(min = 5, max = 200)
 	private String description;
+	@Size(min = 5)
+	private String categoryId;
 	@Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date createdAt;
@@ -59,6 +61,14 @@ public class Category {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	public Date getCreatedAt() {

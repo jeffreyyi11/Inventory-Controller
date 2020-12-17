@@ -11,11 +11,24 @@
 <body>
 	<h1>Categories</h1>
 	<a href="/addcategory">Add Category</a>
-	<c:forEach var="category" items="${categories}">
-			<p>
-				<c:out value="${category.name}"/>
-				<c:out value="${category.description}"/>
-			</p>
-	</c:forEach>
+	<table>
+		<thead>
+			<tr>
+				<td>Name: </td>
+				<td>Description: </td>
+				<td>Sku: </td>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="category" items="${categories}">
+					<tr>
+						<td><c:out value="${category.name}" /> </td>
+						<td><c:out value="${category.description}" /></td>
+						<td><c:out value="${category.categoryId}" /></td>
+						<td><a href="/delete/${category.id}">Delete</a></td>
+					</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 </body>
 </html>
